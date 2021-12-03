@@ -46,8 +46,6 @@ export default {
 
 <style>
 .digit {
-  --animation-speed: 200ms;
-
   margin: 10px 30px;
   height: var(--digit-h);
   width: var(--digit-w);
@@ -56,57 +54,57 @@ export default {
 
 .digit .line {
   width: 100%;
-  height: 10px;
+  height: var(--digit-line-w);
   background-color: var(--primary);
   position: absolute;
   border-radius: 10px;
 
   opacity: 0;
-  transition: opacity var(--animation-speed);
+  transition: opacity 200ms;
 }
 
 .digit .line.active {
   opacity: 1;
-  transition: opacity var(--animation-speed);
+  transition: opacity 200ms;
 }
 
 .digit .line.line-top {
-  top: -10px;
+  top: calc(var(--digit-line-w) * -1);
 }
 
 .digit .line.line-bottom {
-  bottom: -10px;
+  bottom: calc(var(--digit-line-w) * -1);
 }
 
 .digit .line.line-top-left {
-  top: -10px;
-  left: -10px;
+  top: calc(var(--digit-line-w) * -1);
+  left: calc(var(--digit-line-w) * -1);
   transform: rotate(90deg)
     translate(calc(var(--digit-w) / 2), calc(var(--digit-w) / 2));
 }
 
 .digit .line.line-top-right {
-  top: -10px;
-  right: -10px;
+  top: calc(var(--digit-line-w) * -1);
+  right: calc(var(--digit-line-w) * -1);
   transform: rotate(90deg)
     translate(calc(var(--digit-w) / 2), calc(var(--digit-w) / -2));
 }
 
 .digit .line.line-center {
-  top: -5px;
+  top: calc(var(--digit-line-w) / -2);
   transform: translateY(calc(var(--digit-h) / 2));
 }
 
 .digit .line.line-bottom-left {
-  bottom: -10px;
-  left: -10px;
+  bottom: calc(var(--digit-line-w) * -1);
+  left: calc(var(--digit-line-w) * -1);
   transform: rotate(90deg)
     translate(calc(var(--digit-w) / -2), calc(var(--digit-w) / 2));
 }
 
 .digit .line.line-bottom-right {
-  bottom: -10px;
-  right: -10px;
+  bottom: calc(var(--digit-line-w) * -1);
+  right: calc(var(--digit-line-w) * -1);
   transform: rotate(90deg)
     translate(calc(var(--digit-w) / -2), calc(var(--digit-w) / -2));
 }

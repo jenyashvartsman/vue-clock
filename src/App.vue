@@ -22,6 +22,7 @@ export default {
   --background-clock: #303030;
   --digit-w: 100px;
   --digit-h: 200px;
+  --digit-line-w: 10px;
 }
 
 body {
@@ -70,25 +71,26 @@ body {
   :root {
     --digit-w: 25px;
     --digit-h: 50px;
+    --digit-line-w: 6px;
   }
 
   .clock-wrapper {
     padding: 25px;
   }
 
-  .clock {
+  .clock-wrapper .time {
     flex-direction: column;
   }
 
-  .date {
+  .clock-wrapper .date {
     font-size: 18px;
   }
 
-  .clock .time {
+  .clock-wrapper .time-num {
     margin: 10px 0;
   }
 
-  .clock .seperator {
+  .clock-wrapper .time-seperator {
     display: none;
   }
 }
@@ -97,6 +99,7 @@ body {
   :root {
     --digit-w: 50px;
     --digit-h: 100px;
+    --digit-line-w: 8px;
   }
 }
 

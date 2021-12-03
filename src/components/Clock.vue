@@ -1,24 +1,24 @@
 <template>
   <div class="clock-wrapper">
     <div class="date">{{ getDateStr }}</div>
-    <div class="clock">
-      <div class="time">
+    <div class="time">
+      <div class="time-num">
         <clock-digit :digit="getFirstDigit(now.getHours())"></clock-digit>
         <clock-digit :digit="getSecondDigit(now.getHours())"></clock-digit>
       </div>
-      <div class="seperator">
+      <div class="time-seperator">
         <div></div>
         <div></div>
       </div>
-      <div class="time">
+      <div class="time-num">
         <clock-digit :digit="getFirstDigit(now.getMinutes())"></clock-digit>
         <clock-digit :digit="getSecondDigit(now.getMinutes())"></clock-digit>
       </div>
-      <div class="seperator">
+      <div class="time-seperator">
         <div></div>
         <div></div>
       </div>
-      <div class="time">
+      <div class="time-num">
         <clock-digit :digit="getFirstDigit(now.getSeconds())"></clock-digit>
         <clock-digit :digit="getSecondDigit(now.getSeconds())"></clock-digit>
       </div>
@@ -69,25 +69,25 @@ export default {
   border-radius: 20px;
 }
 
-.date {
+.clock-wrapper .date {
   text-align: center;
   margin-bottom: 60px;
   font-size: 36px;
   font-weight: 500;
 }
 
-.clock {
+.clock-wrapper .time {
   display: flex;
   align-items: center;
 }
 
-.clock .time {
+.clock-wrapper .time .time-num {
   display: flex;
 }
 
-.clock .seperator div {
-  width: 20px;
-  height: 20px;
+.clock-wrapper .time .time-seperator div {
+  width: calc(var(--digit-w) / 5);
+  height: calc(var(--digit-w) / 5);
   background-color: var(--primary);
   border-radius: 50%;
   margin: 40px 20px;
