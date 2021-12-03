@@ -1,20 +1,22 @@
 <template>
-  <div class="date">{{ getDateStr }}</div>
-  <div class="clock">
-    <clock-digit :digit="getFirstDigit(now.getHours())"></clock-digit>
-    <clock-digit :digit="getSecondDigit(now.getHours())"></clock-digit>
-    <div class="seperator">
-      <div></div>
-      <div></div>
+  <div class="clock-wrapper">
+    <div class="date">{{ getDateStr }}</div>
+    <div class="clock">
+      <clock-digit :digit="getFirstDigit(now.getHours())"></clock-digit>
+      <clock-digit :digit="getSecondDigit(now.getHours())"></clock-digit>
+      <div class="seperator">
+        <div></div>
+        <div></div>
+      </div>
+      <clock-digit :digit="getFirstDigit(now.getMinutes())"></clock-digit>
+      <clock-digit :digit="getSecondDigit(now.getMinutes())"></clock-digit>
+      <div class="seperator">
+        <div></div>
+        <div></div>
+      </div>
+      <clock-digit :digit="getFirstDigit(now.getSeconds())"></clock-digit>
+      <clock-digit :digit="getSecondDigit(now.getSeconds())"></clock-digit>
     </div>
-    <clock-digit :digit="getFirstDigit(now.getMinutes())"></clock-digit>
-    <clock-digit :digit="getSecondDigit(now.getMinutes())"></clock-digit>
-    <div class="seperator">
-      <div></div>
-      <div></div>
-    </div>
-    <clock-digit :digit="getFirstDigit(now.getSeconds())"></clock-digit>
-    <clock-digit :digit="getSecondDigit(now.getSeconds())"></clock-digit>
   </div>
 </template>
 
@@ -55,6 +57,12 @@ export default {
 </script>
 
 <style>
+.clock-wrapper {
+  background-color: var(--background-clock);
+  padding: 50px 30px;
+  border-radius: 20px;
+}
+
 .date {
   text-align: center;
   margin-bottom: 60px;
