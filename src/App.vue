@@ -12,6 +12,7 @@ export default {
 <style>
 :root {
   --primary: rgb(44, 100, 165);
+  --background: #060708;
 }
 
 body {
@@ -25,6 +26,10 @@ body {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: sans-serif, Helvetica, Arial;
+  color: var(--primary);
+  padding: 50px 35px;
+  border-radius: 20px;
+  background-color: var(--background);
 }
 </style>

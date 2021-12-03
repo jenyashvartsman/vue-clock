@@ -1,4 +1,5 @@
 <template>
+  <div class="date">{{ getDateStr }}</div>
   <div class="clock">
     <clock-digit :digit="getFirstDigit(now.getHours())"></clock-digit>
     <clock-digit :digit="getSecondDigit(now.getHours())"></clock-digit>
@@ -29,6 +30,19 @@ export default {
   beforeMount() {
     setInterval(() => (this.now = new Date()), 1000);
   },
+  computed: {
+    getDateStr() {
+      return (
+        this.now.toLocaleDateString("default", { weekday: "long" }) +
+        ", " +
+        this.now.toLocaleString("default", { month: "long" }) +
+        " " +
+        this.now.getDate() +
+        ", " +
+        this.now.getFullYear()
+      );
+    },
+  },
   methods: {
     getFirstDigit(num) {
       return Math.floor(num / 10);
@@ -41,6 +55,13 @@ export default {
 </script>
 
 <style>
+.date {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 36px;
+  font-weight: 500;
+}
+
 .clock {
   display: flex;
   align-items: center;
