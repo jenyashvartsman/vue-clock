@@ -20,6 +20,8 @@ export default {
   --primary: #3f51b5;
   --background-app: #fafafa;
   --background-clock: #303030;
+  --digit-w: 100px;
+  --digit-h: 200px;
 }
 
 body {
@@ -62,5 +64,46 @@ body {
   background-color: var(--background-clock);
   color: var(--primary);
   cursor: pointer;
+}
+
+@media only screen and (max-width: 850px) {
+  :root {
+    --digit-w: 25px;
+    --digit-h: 50px;
+  }
+
+  .clock-wrapper {
+    padding: 25px;
+  }
+
+  .clock {
+    flex-direction: column;
+  }
+
+  .date {
+    font-size: 18px;
+  }
+
+  .clock .time {
+    margin: 10px 0;
+  }
+
+  .clock .seperator {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 850px) and (max-width: 1200px) {
+  :root {
+    --digit-w: 50px;
+    --digit-h: 100px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :root {
+    --digit-w: 100px;
+    --digit-h: 200px;
+  }
 }
 </style>

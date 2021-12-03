@@ -2,20 +2,26 @@
   <div class="clock-wrapper">
     <div class="date">{{ getDateStr }}</div>
     <div class="clock">
-      <clock-digit :digit="getFirstDigit(now.getHours())"></clock-digit>
-      <clock-digit :digit="getSecondDigit(now.getHours())"></clock-digit>
+      <div class="time">
+        <clock-digit :digit="getFirstDigit(now.getHours())"></clock-digit>
+        <clock-digit :digit="getSecondDigit(now.getHours())"></clock-digit>
+      </div>
       <div class="seperator">
         <div></div>
         <div></div>
       </div>
-      <clock-digit :digit="getFirstDigit(now.getMinutes())"></clock-digit>
-      <clock-digit :digit="getSecondDigit(now.getMinutes())"></clock-digit>
+      <div class="time">
+        <clock-digit :digit="getFirstDigit(now.getMinutes())"></clock-digit>
+        <clock-digit :digit="getSecondDigit(now.getMinutes())"></clock-digit>
+      </div>
       <div class="seperator">
         <div></div>
         <div></div>
       </div>
-      <clock-digit :digit="getFirstDigit(now.getSeconds())"></clock-digit>
-      <clock-digit :digit="getSecondDigit(now.getSeconds())"></clock-digit>
+      <div class="time">
+        <clock-digit :digit="getFirstDigit(now.getSeconds())"></clock-digit>
+        <clock-digit :digit="getSecondDigit(now.getSeconds())"></clock-digit>
+      </div>
     </div>
   </div>
 </template>
@@ -73,6 +79,10 @@ export default {
 .clock {
   display: flex;
   align-items: center;
+}
+
+.clock .time {
+  display: flex;
 }
 
 .clock .seperator div {

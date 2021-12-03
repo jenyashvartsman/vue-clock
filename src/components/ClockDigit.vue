@@ -46,8 +46,6 @@ export default {
 
 <style>
 .digit {
-  --digit-w: 100px;
-  --digit-h: 200px;
   --animation-speed: 200ms;
 
   margin: 10px 30px;
